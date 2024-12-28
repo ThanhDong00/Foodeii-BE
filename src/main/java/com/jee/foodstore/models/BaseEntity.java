@@ -24,4 +24,8 @@ public abstract class BaseEntity {
         createdAt = timestamp;
         updatedAt = timestamp;
     }
+
+    public String getId() {
+        return id.toString();
+    }
 }
