@@ -11,8 +11,7 @@ import org.bson.types.ObjectId;
 public class CartProduct {
     @Id
     private ObjectId id;
-    @Reference
-    private Cart cart;
+    private String cartId;
     @Reference
     private Product product;
     private int quantity;

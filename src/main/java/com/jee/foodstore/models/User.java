@@ -1,12 +1,12 @@
 package com.jee.foodstore.models;
 
 import dev.morphia.annotations.*;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 @Data
 @Entity("users")
+@NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Builder(toBuilder = true)
 @Indexes({

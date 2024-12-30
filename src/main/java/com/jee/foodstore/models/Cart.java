@@ -5,6 +5,7 @@ import dev.morphia.annotations.Reference;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -13,6 +14,6 @@ import java.util.List;
 public class Cart extends BaseEntity {
     @Reference
     private User user;
-    @Reference
-    private List<CartProduct> cartProducts;
+    @Reference (lazy = false, idOnly = true)
+    private List<CartProduct> cartProducts = new ArrayList<>();
 }

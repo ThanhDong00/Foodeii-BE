@@ -14,6 +14,7 @@ import java.util.List;
 public class Order extends BaseEntity {
     @Reference
     private User user;
+
     private BigDecimal totalAmount;
     private String status;
     @Reference
