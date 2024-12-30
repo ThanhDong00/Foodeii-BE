@@ -11,8 +11,7 @@ import java.math.BigDecimal;
 @Entity("order_products")
 @EqualsAndHashCode(callSuper = true)
 public class OrderProduct extends BaseEntity {
-    @Reference
-    private Order order;
+    private String orderId;
     @Reference
     private Product product;
     private int quantity;

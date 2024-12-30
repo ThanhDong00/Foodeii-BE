@@ -1,0 +1,139 @@
+### Categories
+
+GET http://localhost:8080/api/categories
+
+### get by id
+
+GET http://localhost:8080/api/categories/67702a7c8d7f5d71c68ca841
+
+### create
+
+POST http://localhost:8080/api/categories
+Content-Type: application/json
+
+{
+  "name": "Fresh Fruits and Berries",
+  "description": "All types of fresh fruits and berries"
+}
+
+### update
+
+PUT http://localhost:8080/api/categories/675ad29fc802a61fa175af46
+Content-Type: application/json
+
+{
+  "name": "Fresh Fruits",
+  "description": "All types of fresh fruits and berries"
+}
+
+### Products
+
+GET http://localhost:8080/api/products
+
+### get by id
+
+GET http://localhost:8080/api/products/677036279e33130f4473bffb
+
+### create
+
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+  "name": "Pineapple 2",
+  "description": "Pineapple is a tropical fruit with a sweet and tangy flavor that is full of vitamins and minerals.",
+  "price": 500000,
+  "category": {
+    "id": "67702a7c8d7f5d71c68ca841"
+  },
+  "stockQuantity": 5,
+  "imageUrl": "https://m.media-amazon.com/images/S/assets.wholefoodsmarket.com/PIE/product/56e9ce4cccda1111007afc8e_365_-pineapple.1.jpg"
+}
+
+### update
+
+PUT http://localhost:8080/api/products/677036489e33130f4473bffc
+Content-Type: application/json
+
+{
+  "name": "Updated Pineapple",
+  "description": "Pineapple is a tropical fruit with a sweet and tangy flavor that is full of vitamins and minerals.",
+  "price": 500000,
+  "stockQuantity": 5,
+  "imageUrl": "https://m.media-amazon.com/images/S/assets.wholefoodsmarket.com/PIE/product/56e9ce4cccda1111007afc8e_365_-pineapple.1.jpg"
+}
+
+### delete
+
+DELETE http://localhost:8080/api/products/677036279e33130f4473bffb
+
+### Orders
+
+GET http://localhost:8080/api/orders
+
+### Order-Products
+
+GET http://localhost:8080/api/order-products
+
+### get by id
+
+GET http://localhost:8080/api/orders/67713d73d2bf8e35dddee85a
+
+### create orders
+
+POST http://localhost:8080/api/orders
+Content-Type: application/json
+
+{
+    "totalAmount": 500000,
+    "status": "PENDING",
+    "order-products": [
+        {
+            "product": {
+                "id": "677036489e33130f4473bffc"
+            },
+            "quantity": 1,
+            "price": 500000
+        }
+    ]
+}
+
+### create
+
+POST http://localhost:8080/api/order-products
+Content-Type: application/json
+
+{
+    "product": {
+        "id": "677036489e33130f4473bffc"
+    },
+    "orderId": "67713d73d2bf8e35dddee85a",
+    "quantity": 1,
+    "price": 500000
+}
+
+### update
+
+PUT http://localhost:8080/api/orders/67713d73d2bf8e35dddee85a
+Content-Type: application/json
+
+{
+    "id": "67713d73d2bf8e35dddee85a",
+    "totalAmount": 500000,
+    "status": "PENDING",
+    "orderProducts": [
+        {
+            "id": "67713dabd2bf8e35dddee85b",
+            "product": {
+                "id": "677036489e33130f4473bffc"
+            },
+            "orderId": "67713d73d2bf8e35dddee85a",
+            "quantity": 1,
+            "price": 500000
+        }
+    ]
+}
+
+### delete
+
+DELETE http://localhost:8080/api/orders/677036279e33130f4473bffb
