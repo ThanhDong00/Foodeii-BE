@@ -39,6 +39,7 @@ public class UserResource {
     }
 
     @GET
+
     public Response getAllUsers() {
         try {
             return Response.ok(userService.getAllUsers()).build();
